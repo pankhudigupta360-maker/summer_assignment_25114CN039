@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,x,a,count;
+    int i,x,a,count,alrprint;
     printf("enter the number of elements:");
     scanf("%d",&i);
     int arr[i];
@@ -19,8 +19,17 @@ int main()
             }
         }
         if(count>1){
+            alrprint=0;
+            for(int b=0;b<a;b++){
+                if(arr[a]==arr[b]){
+                    alrprint=1;
+                    break;
+                }
+            }
+        if(alrprint==0){
             printf("%d",x);
         }
     }
-    return 0;
+}
+return 0;
 }
