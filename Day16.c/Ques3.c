@@ -1,27 +1,28 @@
+//program for finding pair of elements in an array equal to a given sum.
 #include<stdio.h>
 int main()
 {
-int i,n,sum,a,b,found=0;
-int arr[100];
-printf("enter number of elements:");
-scanf("%d",&n);
-printf("enter array element:");
-for(i=0;i<n;n++){
-scanf("%d",&arr[i]);
-}
-printf("enter the sum to find:");
-scanf("%d",&sum);
-printf("pairs with sum %d are:",sum);
-for(a=0;a<n;a++){
-    for(b=a+1;b<n;b++){
-        if(arr[a]+arr[b]==sum){
-            printf("(%d,%d)",arr[a],arr[b]);
-            found=1;
-        }
+    int i,a,sum;
+    printf("Enter the number of elements of the array:");
+    scanf("%d",&i);
+    int arr[i];
+    printf("Enter the elements of the array:");
+    for(a=0;a<i;a++){
+        scanf("%d",&arr[a]);
     }
-}
-if(found==0){
-    printf("no pair found");
-}
-return 0;
+    printf("Enter the sum:");
+    scanf("%d",&sum);
+    for(a=0;a<i;a++){
+        int sum=0;
+        for(int k=0;k<a;k++){
+            if(arr[a]+arr[k]==sum){
+             printf("%d and %d is the pair equal to the %d\n",arr[a],arr[k],sum);
+             sum=1;
+            }
+        }
+            if(sum==0){
+                printf("no pair equal to %d found.",sum);
+            }
+    }
+    return 0;
 }
